@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+  <title>{% block title %}{% endblock %} - Web Files</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Web Files</a>
+  <!-- Navbar content -->
+</nav>
+<div>
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</div>
+{% block script %}
+{% endblock script %}
