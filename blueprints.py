@@ -25,6 +25,7 @@ def upload():
             from app import app
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect('/')
     return render_template('upload.html')
 
 @webapp_bp.route('/', methods=['GET', 'POST'])

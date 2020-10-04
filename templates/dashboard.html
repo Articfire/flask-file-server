@@ -6,13 +6,13 @@
 
 {% block content %}
 <div class="container">
-    <a class="btn btn-primary" href="upload">Upload</a>
+    <a class="btn btn-primary mb-2" href="upload">Upload</a>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">File name</th>
-                <th scope="col">Download</th>
                 <th scope="col">Preview</th>
+                <th scope="col">Download</th>
             </tr>
         </thead>
         <tbody>
@@ -20,10 +20,10 @@
             <tr>
                 <td>{{ filename }}</td>
                 <td>
-                    <a class="btn btn-success" href="download/{{ filename }}">Download</a>
+                    <a class="btn btn-info" href="preview/{{ filename }}">Preview</a>
                 </td>
                 <td>
-                    <a class="btn btn-info" href="preview/{{ filename }}">Preview</a>
+                    <a class="btn btn-success" href="download/{{ filename }}">Download</a>
                 </td>
             </tr>
         {% endfor %}
